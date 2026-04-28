@@ -20,6 +20,15 @@
 - If the remote push output contains warnings like "Bypassed rule violations", "changes must be made through a pull request", or similar protected-branch warnings, STOP -- assume the push was wrong and surface it to the user immediately.
 - `--force` / `--force-with-lease` on any shared branch always requires explicit per-operation confirmation, even if it's correcting an earlier mistake.
 
+## Concision (chat replies, PR comments, commit bodies, drafted messages)
+- Lead with the point. One sentence stating what is wrong, what to do, or what you want.
+- Cut hedging ("worth confirming", "in practice", "mostly a theoretical"), throat-clearing ("LGTM in spirit"), and meta-narration about the analysis.
+- Skip restating the diff. The reader has it open.
+- Concrete words over abstract ones. "Falls back to /api" not "violates the invariant".
+- If a comment runs past 5 lines, cut it in half before posting.
+- Listing possibilities is fine; pad each option with no more than a sentence.
+- Apply this everywhere prose is written: chat, PR review comments, issue bodies, commit messages, drafted Slack/Teams messages.
+
 ## Writing style
 - NEVER use em dashes (`—`, U+2014) in any prose output: code comments, commit messages, PR descriptions, chat replies, user-visible copy in apps/sites, or documentation.
   - In **Markdown or plain-text documents** (READMEs, notes, commit bodies, PR descriptions), prefer `--` (two hyphens) where an em dash would otherwise go.
