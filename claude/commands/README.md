@@ -35,3 +35,4 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-secret-scan` — read-only scan of changes and example/config files for secret-shaped strings before commit.
 - `nfebe-test` — write or run tests that exercise the same boundary a real user hits, with no fabricated external shapes.
 - `nfebe-review` — review a diff against my global rules, citing only files actually opened this session.
+- `nfebe-git-clean` — clean merged feature branches and refresh the default branch in one or more related repos (safe-delete only, protects shared branches); optionally start a fresh feature branch.
