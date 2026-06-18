@@ -29,8 +29,8 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 
 ### Personal (`nfebe-`)
 
-- `nfebe-pr`: prepare a PR to my standards (branch off shared branches, commit in my format, push the feature branch, draft title and body) and stop before creating it.
-- `nfebe-commit`: commit staged changes in my format after a pre-commit scrub for secrets, attribution, dashes, and contextual comments; refuses shared branches.
+- `nfebe-pr`: prepare a PR to my standards (commit via `/nfebe-commit`, verify the repo's CI checks, push the feature branch, draft title and body) and stop before creating it.
+- `nfebe-commit`: branch off the updated default (name format `prefix/issue/short-name`) and commit my work after a pre-commit scrub for secrets, attribution, dashes, and contextual comments; conforms the message to the repo's commit-validation job (commitlint) so it does not fail CI; pauses and asks when already on a feature branch; no push, no PR.
 - `nfebe-scrub`: clean a diff, message, or drafted text to my writing and hygiene rules. No git side effects.
 - `nfebe-issue`: draft or clean a GitHub issue to my style (conventional-commit title, terse Task/Action/Acceptance, no names/quotes/process-metadata). Stops before `gh issue create`.
 - `nfebe-consult`: search the knowledge base for notes on a topic and summarize what it records, citing sources. Read-only.

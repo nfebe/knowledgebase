@@ -9,7 +9,8 @@ Get one or more related repos into a clean state: prune stale branches, delete m
 ## Resolve the target repos
 
 - If repo paths are given, use them. If a parent directory is given, treat each immediate subdirectory that is a git repo as a target. If nothing is given, use the current repo only.
-- Print the resolved repo list. For anything beyond the current repo, confirm the list before deleting any branches.
+- **Prioritize the most recent context, do not sweep the world.** When no repos or branches are named, scope the cleanup to what this session just finished. If I just merged or wrapped up a feature, target that repo and that branch first rather than scanning every repo and branch. Only broaden (sweep all branches, multiple repos) when there is no such context to anchor on, or when I explicitly ask for a wider sweep.
+- Print the resolved repo list and the branches you intend to act on. For anything beyond the current repo or the just-finished work, confirm the list before deleting any branches.
 
 ## Per repo (nothing destructive until the working tree is clean)
 
