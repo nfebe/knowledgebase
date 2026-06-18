@@ -20,6 +20,12 @@ Follow my testing discipline strictly.
 - Any test input or mock that stands in for something I do not own (a library error/exception, an API/HTTP response, a returned type, an enum/constant, an event payload, a DB row, a config/schema field, a function signature) must be a REAL sample: captured from the actual runtime, or copied from the dependency's types/fixtures in `node_modules` or its source. Cite where you read the shape.
 - If you cannot obtain a real sample, say so and mark the test as unverified against reality rather than asserting a guess against a guess.
 
+## Pass the project's real checks, not just your own tools
+
+- Passing tests is not enough. The change must also pass the project's lint, format, and static analysis. Run the SAME checks CI runs, not just your own auto-formatter. A local `pint` or `eslint --fix` going green does NOT mean `phpcs` or `prettier --check` passes: line-length limits, whole-repo format checks, and stricter sniffs differ and will fail in CI.
+- Discover the real commands from the repo, do not guess them: read the CI workflow files under `.github/workflows`, then the `composer.json` scripts (for example `phpcs:test`, `test`) and `package.json` scripts (for example `lint`, `format:check`, `test`). Run exactly those.
+- If a check only runs inside a container or you cannot run it locally, run it there, or state plainly which check you could not verify. Never assume green.
+
 ## Run and report
 
 Run the tests through the real runner and report the actual output. If they fail, show the failure: do not gloss a red result as done.
