@@ -39,3 +39,4 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-review`: review a diff against my global rules, citing only files actually opened this session.
 - `nfebe-git-clean`: clean merged feature branches and refresh the default branch in one or more related repos (safe-delete only, protects shared branches); optionally start a fresh feature branch.
 - `nfebe-update-knowledge`: record a note into the knowledge base, sync the live global Claude config (`CLAUDE.md` and command symlinks) into the repo, then commit and push to `main`.
+- `nfebe-design-google`: move a UI toward a Google-style design language (clean, colorful, creative, illustration- and vector-rich) while keeping the project's own brand. Brand-adaptive, works on any project.
