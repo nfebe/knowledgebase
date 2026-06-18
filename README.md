@@ -6,10 +6,16 @@ Personal knowledgebase for tracking the state of work across different projects 
 
 ```
 knowledgebase/
-├── README.md
+├── README.md           # this index
+├── claude/             # Claude Code config (CLAUDE.md + commands/) mirrored from the live machine
+├── mac/                # machine setup notes
 └── useblocks/          # useblocks organization
-    └── ubinfra/        # Infrastructure-related notes
+    ├── billing/        # invoice-grade time logs only
+    ├── ubinfra/        # infrastructure notes
+    └── ubtrace/        # ubTrace product notes
 ```
+
+This Structure tree is the index: it lists every top-level org and major folder. Keep it current whenever one is added.
 
 ## How It Works
 

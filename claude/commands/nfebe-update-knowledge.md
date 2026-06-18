@@ -22,6 +22,7 @@ If the only argument is `--sync-only`, skip the note step and just run the sync,
   - `claude/` only for Claude config itself (handled by the sync step below, not by hand).
   - A new top-level folder named after the org for a new company.
 - Keep billing out of technical notes: `useblocks/billing/` is invoice-grade time logs only. Never drop technical notes there, and never put billing detail into a technical note.
+- If the note introduces something major (a new top-level org folder or a new major sub-folder), update the index to match: the `Structure` tree in the top-level `README.md` lists every org and major folder. Add the new entry with a one-line description and keep the tree accurate. The index tracks folders, not individual note files.
 - Append to the most relevant existing file rather than creating a near-duplicate; create a new file only when no existing one fits. Match the surrounding note style. Follow my writing rules: no em dashes, no en-dash punctuation, no `--` in rendered prose, and never use the acronyms "DAG" or "DoD" (spell them out).
 - Remember this is a private, local-only knowledge base: it is notes, not a procedure to cite back to me elsewhere.
 
