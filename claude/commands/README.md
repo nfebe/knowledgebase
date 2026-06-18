@@ -33,6 +33,7 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-commit`: commit staged changes in my format after a pre-commit scrub for secrets, attribution, dashes, and contextual comments; refuses shared branches.
 - `nfebe-scrub`: clean a diff, message, or drafted text to my writing and hygiene rules. No git side effects.
 - `nfebe-issue`: draft or clean a GitHub issue to my style (conventional-commit title, terse Task/Action/Acceptance, no names/quotes/process-metadata). Stops before `gh issue create`.
+- `nfebe-consult`: search the knowledge base for notes on a topic and summarize what it records, citing sources. Read-only.
 - `nfebe-secret-scan`: read-only scan of changes and example/config files for secret-shaped strings before commit.
 - `nfebe-test`: write or run tests that exercise the same boundary a real user hits, with no fabricated external shapes.
 - `nfebe-review`: review a diff against my global rules, citing only files actually opened this session.
