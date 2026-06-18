@@ -54,6 +54,13 @@
 - Listing possibilities is fine; pad each option with no more than a sentence.
 - Apply this everywhere prose is written: chat, PR review comments, issue bodies, commit messages, drafted Slack/Teams messages.
 
+## Process metadata stays out of deliverables
+- The work I do to be correct is not content for the thing I produce. Verification steps, "verified facts" / "confirmed this session" labels, confidence hedges, and any narration of how or why I did the work are for my own correctness only.
+- Never put them in an issue, PR, commit message, doc, plan handed off, or any artifact another person reads. An issue gets the task, actions, and acceptance criteria, not a "Verified facts" section. A commit body gets what changed and why, not "I verified this against the docs". A PR description gets the change, not my checking process.
+- State facts and constraints plainly and directly (`Constraint: ...`), never as narration ("the one non-obvious thing driving this whole plan is...").
+- Do not restate context the reader already owns (their own infra, their own request) back to them. Lead with what is new or needed.
+- This is a specialization of Concision: the reader wants the result, not my process. See `/nfebe-issue` for the issue-specific application.
+
 ## Code comments
 - Default: write no code comments. Only add one when the line itself has a non-obvious technical decision (workaround, invariant, surprising behavior) that a reader must understand to change it safely.
 - Never write comments that reference where the change came from. Examples to never include:
