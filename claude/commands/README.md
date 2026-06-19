@@ -38,6 +38,7 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-secret-scan`: read-only scan of changes and example/config files for secret-shaped strings before commit.
 - `nfebe-test`: write or run tests that exercise the same boundary a real user hits, with no fabricated external shapes.
 - `nfebe-review`: review a diff against my global rules, citing only files actually opened this session.
+- `nfebe-new-task`: prepare one or more repos to start any task (fix, feature, refactor, chore, docs, investigation): land on the freshly updated default branch and cut a properly named branch (same branch rules as `nfebe-commit`). The general form of `nfebe-new-feature`. No staging, commit, or push.
 - `nfebe-new-feature`: prepare one or more repos to start a new feature: land on the freshly updated default branch and cut a properly named feature branch (same branch rules as `nfebe-commit`). No staging, commit, or push.
 - `nfebe-git-clean`: clean merged feature branches and refresh the default branch in one or more related repos (safe-delete only, protects shared branches); optionally start a fresh feature branch.
 - `nfebe-update-knowledge`: record a note into the knowledge base, sync the live global Claude config (`CLAUDE.md` and command symlinks) into the repo, then commit and push to `main`.

@@ -43,7 +43,7 @@ Create `<nc-tickets>/<number>-<short-slug>.md`, matching the format of existing 
 - `## Action Items` (checkbox list) and/or `## Status`.
 - `## References`: the source URLs and any code paths.
 
-Follow the writing rules: no em dashes, no en-dash punctuation, no `--` in rendered prose; no AI/Claude attribution anywhere; no contextual comments referencing this conversation, issues, or colleagues; plain direct facts, no process narration.
+Follow the writing rules: avoid em dashes (use one only when genuinely clearest), no en-dash punctuation, no `--` in rendered prose; no AI/Claude attribution anywhere; no contextual comments referencing this conversation, issues, or colleagues; plain direct facts, no process narration.
 
 ## 6. Commit and push
 

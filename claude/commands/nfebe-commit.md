@@ -26,8 +26,8 @@ The commit must land on a feature branch cut from the freshly updated default br
 - **Inspect, do not blind-add.** Show `git status` and `git diff --staged`. If nothing is staged, ask what to stage rather than running `git add -A` yourself.
 - **Secrets.** Scan for secret-shaped strings: `AIza` (Google), `sk-` (OpenAI), `ghp_`/`gho_` (GitHub), `xox` (Slack), `AKIA` (AWS), and any long hex/base64 blob under a key named `api_key`/`token`/`password`/`secret`/`*_key`. If one is in a tracked file, STOP and surface it. Do not commit. Recommend a placeholder and tell me to rotate the real key. Do not name the leak in the message.
 - **Attribution.** Remove any AI/Claude attribution, `Co-Authored-By`, "Generated with" marker, or banned variant from the message and the diff.
-- **Dashes.** In added prose and comments, rewrite em dashes (never allowed), en-dash punctuation, and stylistic `--` using a colon, parentheses, comma, or period. En dash is fine only in numeric ranges.
-- **Contextual comments.** Flag and remove code comments that reference where the change came from (my requests, colleague names, conversations, ticket/PR/issue IDs, "Step 2", or unrelated file references).
+- **Contextual comments (do this pass first, it matters more than dashes).** Flag and remove code comments that reference where the change came from (my requests, colleague names, conversations, ticket/PR/issue IDs, "Step 2", or unrelated file references). An irrelevant comment rots the code and misleads future readers; a stray dash is cosmetic. Prioritize this.
+- **Dashes (lower priority).** In added prose and comments, rewrite gratuitous em dashes, en-dash punctuation, and stylistic `--` using a colon, parentheses, comma, or period; leave an em dash only where it is genuinely the clearest option. En dash is fine only in numeric ranges. Worth doing, but never let dash scanning crowd out the comment pass above.
 
 ## Commit message: conform to the repo's commit validation
 

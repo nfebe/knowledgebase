@@ -23,7 +23,7 @@ This command writes the draft and shows it. It does not run `gh issue create` un
    - The originating outage/incident/conversation when the task itself is the deliverable. "Upgrade X to v3" does not need the outage story.
    - Process/correctness metadata: no "Verified facts", no "(verified this session)", no notes on how I checked. Verifying is for my correctness, not the reader. See the global rule "Process metadata stays out of deliverables".
    - Narration: state a constraint as `Constraint: ...`, never "the one non-obvious thing driving the whole plan is...".
-5. **Writing hygiene** (global rules): no em dashes or en-dash/`--` punctuation in prose, never the acronyms "DAG" or "DoD" (spell them out), no AI/Claude attribution anywhere.
+5. **Writing hygiene** (global rules): avoid em dashes and en-dash/`--` punctuation in prose (an em dash only when genuinely clearest), never the acronyms "DAG" or "DoD" (spell them out), no AI/Claude attribution anywhere.
 
 ## How to work
 

@@ -19,7 +19,7 @@ This is a read-only review. No commits, pushes, or PR state changes (no merging,
 2. **Tests.** Do they go through the user's boundary (HTTP/CLI/queue/UI), not around the controller? Does a bug fix have a regression test reproducing the user's actual call?
 3. **Secrets.** Secret-shaped strings (`AIza`, `sk-`, `ghp_`/`gho_`, `xox`, `AKIA`, long hex/base64 under `api_key`/`token`/`password`/`secret`/`*_key`), especially in example/config files.
 4. **Attribution.** Any AI/Claude attribution, `Co-Authored-By`, "Generated with" marker, or robot emoji anywhere in the diff or messages.
-5. **Dashes.** Em dashes (never), en-dash punctuation, stylistic `--` in added prose/comments.
+5. **Dashes.** Gratuitous em dashes (avoid by default, fine only when clearly the best choice), en-dash punctuation, stylistic `--` in added prose/comments.
 6. **Code comments.** Only non-obvious, context-free technical notes survive. Flag comments that reference requests, names, conversations, ticket/PR IDs, plan steps, or unrelated files.
 7. **Commit format** (if reviewing commits): `prefix(scope): Title`, allowed prefixes, capitalized, <= 80 chars, body describes WHAT/WHY not HOW.
 

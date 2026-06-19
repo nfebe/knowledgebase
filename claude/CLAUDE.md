@@ -78,9 +78,9 @@
 - Avoid dashes as a punctuation device in prose. This covers em dashes (`—`, U+2014), en dashes (`–`, U+2013) used as punctuation, and the `--` (two-hyphen) substitute. Applies to every prose output: code comments, commit messages, PR descriptions, chat replies, user-visible copy in apps/sites, and documentation.
   - Default: rewrite the sentence so no dash is needed. Use a colon, semicolon, period, comma, or parentheses, whichever preserves the meaning most naturally. Common substitutions: parenthetical aside -> parentheses or commas; elaboration / list introduction -> colon; abrupt break -> period or semicolon.
   - `--` (two hyphens) is a last-resort fallback for **Markdown or plain-text documents** (READMEs, notes, commit bodies, PR descriptions) only when rewriting would genuinely hurt clarity. Prefer rewriting first; reach for `--` only if the alternative is worse. Never use `--` in rendered prose (HTML/JSX body copy, marketing pages, blog posts, UI microcopy).
-  - Em dashes (`—`) are never acceptable, in any context, regardless of how natural they feel. No exceptions for "stylistic" use.
+  - Em dashes (`—`): avoid by default, rewrite to a colon, comma, parentheses, or period first. They are acceptable only when an em dash is genuinely the clearest option and rewriting would hurt the sentence. Do not reach for them stylistically or out of habit; the default remains to avoid.
 - En dashes (`–`) are fine for **numeric ranges** (e.g. `pp. 45–52`, `2024–2026`). They are not acceptable as a punctuation dash in prose; convert those the same way as em dashes.
-- When editing an existing document that contains em dashes, en-dash punctuation, or stylistic `--`, fix them as part of the change. Do not leave them in place "because they weren't mine".
+- When editing an existing document that contains gratuitous em dashes, en-dash punctuation, or stylistic `--`, rewrite them as part of the change rather than leaving them "because they weren't mine". Leave a dash only where it is genuinely the clearest option.
 
 ## Explanations
 - Explain from first principles. Start at the simplest, most basic building block and build up from there. Shortest path, fewest words, newbie-friendly. Treat me as someone who has never seen the topic before unless the conversation has already shown otherwise.
