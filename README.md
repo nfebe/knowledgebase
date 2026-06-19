@@ -9,6 +9,7 @@ knowledgebase/
 ├── README.md           # this index
 ├── claude/             # Claude Code config (CLAUDE.md + commands/) mirrored from the live machine
 ├── mac/                # machine setup notes
+├── nextcloud/          # Nextcloud server contribution notes
 └── useblocks/          # useblocks organization
     ├── billing/        # invoice-grade time logs only
     ├── ubinfra/        # infrastructure notes

@@ -26,6 +26,7 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 ### Nextcloud (`nc-`)
 
 - `nc-finish-backports`: clean up and finish the bot-created backport PRs for a merged `nextcloud/server` PR (rebase onto latest stable, drop empty commits, de-mangle the message, remove `[skip ci]`, verify the source matches the original, force-push).
+- `nc-pr`: prepare or finish a `nextcloud/server` PR. Wraps `/nfebe-pr` and adds the Nextcloud rules: locate the server checkout, handle review threads (verify external shapes, rebase, fold into the fix commit), and always disregard `dist/` (never commit local `npm run build` output; let the `/compile` bot regenerate assets). Confirms before any push or PR create.
 - `nc-triage`: triage a Nextcloud support ticket end to end: verify context, find the root cause in code (or research a product/feature/availability question with cited sources), classify it, write a structured note into the `nc-tickets` repo with a customer response draft, then commit and push to `master`.
 
 ### Personal (`nfebe-`)
