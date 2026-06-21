@@ -19,4 +19,9 @@ Prepare a PR for the current work, following my rules exactly. **Do NOT create t
 Once I approve and the PR exists, confirm CI actually goes green (`gh pr checks <branch> --watch`, or watch the Actions run) and check for review feedback. If any check fails or a review requests changes, fix it, recommit, repush, and re-verify. Do not treat the PR as ready while checks are red.
 
 ## Before you finish
-Re-scan the commit message(s) and drafted PR text for any attribution line or dash punctuation and strip it. Report the branch, the title, the body, and the single yes/no question.
+Re-scan the committed diff and the drafted PR text and strip three things:
+- **Unnecessary / obvious comments** in the diff. The `/nfebe-commit` scrub covers this, but fixes you make while getting CI green (step 3) can add new ones, so check again. Remove comments that only restate what the code does or narrate that the task I described is done ("Add the export button", "Now stream the rows"). Keep a comment only when it explains a non-obvious decision a reader must know to change the line safely (invariant, workaround, surprising default, optimization, tricky math). When in doubt, cut it.
+- **Attribution** in any commit message or PR text.
+- **Dash punctuation** in commit messages and PR text.
+
+Report the branch, the title, the body, and the single yes/no question.
