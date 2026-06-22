@@ -4,10 +4,13 @@ Captured 2026-05-04 from the deployment session that took prod from chart 1.2.1 
 
 The next user-visible upgrade target is `1.3.0-dev.23` (the only commit ahead of dev.22 on `develop` is the always-on metric builder feature flag, PR #1266).
 
-This folder is private reference: account-specific identifiers, recovered secrets, post-mortems, and gap audits. The **generic upgrade process** is not duplicated here. It belongs in the ubtrace repo docs (currently being drafted into PR #1050 follow-ups).
+This folder is private reference: account-specific identifiers, recovered secrets, post-mortems, and gap audits.
+
+**Deploying? Start with [prod-deploy-process.md](prod-deploy-process.md).** It is the current authoritative process: we deploy from the unmerged eks branches (`feat/844-eks-templates` in ubtrace, `feat/844-migrate-ubtrace-deploy-config` in ubinfra) until both merge, and prod does have Terraform state (reconciled 2026-06-15). It supersedes older "helm-only, no terraform state" wording and the closed PR #1050 pointer.
 
 Contents:
 
+- [prod-deploy-process.md](prod-deploy-process.md): the current deploy process and working arrangement. Read first before any deploy.
 - [overview.md](overview.md): hostnames, AWS resources, account/profile, cluster, RDS, EFS, cert ARN.
 - [credentials.md](credentials.md): Keycloak master admin, ubteam bootstrap user, OIDC client secret, RDS DB user/pass. **Sensitive: do not commit upstream.**
 - [outage-2026-05-01.md](outage-2026-05-01.md): root cause and timeline of the ALB outage. The recurring lessons (chart quirks, immutability, ALB recreation, secret cutover) are listed here but belong in the chart docs / repo runbook, not duplicated as separate files.
@@ -23,7 +26,7 @@ Contents:
 | AWS profile | `ubtrace-prod-admin` |
 | EKS cluster | `ubtrace-prod` |
 | K8s namespace | `ubtrace` |
-| Helm release | `ubtrace` (current revision: 14, chart `ubtrace-1.2.1`, app `1.3.0-dev.22`) |
+| Helm release | `ubtrace` (revision 35, chart `ubtrace-1.5.0`, app `1.6.0-rc.0`, deployed 2026-06-22) |
 | Public hosts | `team.useblocks.com`, `api.team.useblocks.com`, `admin.team.useblocks.com`, `auth.team.useblocks.com` |
 | ACM cert (in use, ISSUED) | `arn:aws:acm:eu-central-1:809338888439:certificate/aac8197b-13ad-4314-985a-d7a2941014dd` (4 SANs) |
 | RDS app | `ubtrace-prod-app.c7kw2gkyclmb.eu-central-1.rds.amazonaws.com:5432/ubtrace` (db.t3.small) |
