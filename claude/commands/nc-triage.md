@@ -39,9 +39,12 @@ Create `<nc-tickets>/<number>-<short-slug>.md`, matching the format of existing 
 - `## Summary`: the problem or question and the short answer.
 - For a bug: `## Reproduction`, `## Root Cause` (with `file:line` and quoted code), `## Fix`. For a question: `## Findings` with each fact and its source URL.
 - `## Verification`: how the answer or fix was confirmed.
-- `## Customer Response Draft`: a polite, direct reply the human can send. It states only verified facts, names sources where useful, and contains no fabricated versions or dates.
+- `## Resolution`: the outcome that resolves the ticket and the current state of the conversation (answered and awaiting review, pending customer info, fix in progress, escalated).
+- `## Customer Response Draft` (optional, keep short): the key points the human should convey, stated as verified facts with sources where useful and no fabricated versions or dates. This is a starting draft to send, not an archive. Do not store a transcript of every message exchanged; the note's value is the resolution and findings, not a copy of the replies.
 - `## Action Items` (checkbox list) and/or `## Status`.
 - `## References`: the source URLs and any code paths.
+
+The note records what resolved the ticket and the findings behind it, plus where the conversation stands. It is not a log of the exact text sent to the customer.
 
 Follow the writing rules: avoid em dashes (use one only when genuinely clearest), no en-dash punctuation, no `--` in rendered prose; no AI/Claude attribution anywhere; no contextual comments referencing this conversation, issues, or colleagues; plain direct facts, no process narration.
 
