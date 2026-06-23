@@ -48,13 +48,17 @@ The note records what resolved the ticket and the findings behind it, plus where
 
 Follow the writing rules: avoid em dashes (use one only when genuinely clearest), no en-dash punctuation, no `--` in rendered prose; no AI/Claude attribution anywhere; no contextual comments referencing this conversation, issues, or colleagues; plain direct facts, no process narration.
 
-## 6. Commit and push
+## 6. Verify before committing (`/nfebe-verify`)
+
+Run `/nfebe-verify` over the finished note and the customer response draft before staging anything. Every `file:line`, quoted snippet, version, release date, config key, and behavior claim must be backed by evidence gathered this session, not memory. Tighten any over-broad statement, drop tangential claims, name the source behind any "fixed in version N" type fact, and label anything you could not confirm as unverified. Apply the corrections to the note and draft, then continue.
+
+## 7. Commit and push
 
 - Stage only the new ticket file (and its attachments dir if you created one). Do not sweep up other untracked notes in the repo.
 - Commit in the repo's format: `docs: <Title>` (capitalized, under 80 chars, describing what was recorded). No attribution.
 - `nc-tickets` is a personal repo whose normal flow is direct to `master`, and recording-and-publishing is this command's purpose, so pushing to `master` here is authorized. Still print `git log origin/master..HEAD --oneline` before pushing.
 - `git push`. If the output shows any protected-branch warning ("Bypassed rule violations", "changes must be made through a pull request", or similar), STOP and surface it.
 
-## 7. Report
+## 8. Report
 
-One short summary: the note path, the classification (severity / topic / type), the root cause or answer in a line, the commit subject, and that the push succeeded. Then show the Customer Response Draft so it can be reviewed before sending.
+One short summary: the note path, the classification (severity / topic / type), the root cause or answer in a line, that the verify pass ran (and what it corrected, if anything), the commit subject, and that the push succeeded. Then show the Customer Response Draft so it can be reviewed before sending.

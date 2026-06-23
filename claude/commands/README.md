@@ -39,6 +39,8 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-secret-scan`: read-only scan of changes and example/config files for secret-shaped strings before commit.
 - `nfebe-test`: write or run tests that exercise the same boundary a real user hits, with no fabricated external shapes.
 - `nfebe-review`: review a diff against my global rules, citing only files actually opened this session.
+- `nfebe-verify`: fact-check a note, draft, or answer against evidence gathered this session, flag fabrications, over-broad statements, and assumptions, label what is unverified, and apply the corrections. Wired in as a final pass in `nc-triage`, `nfebe-issue`, `nfebe-pr`, and `nfebe-review`. Read-only plus edits to the target; no commit or push.
+- `nfebe-writing-style`: rewrite or check text to my voice (measured on uncertain claims, explicit "Unverified" labels, tables/bullets for enumerable facts), on top of the hard rules in the global `CLAUDE.md`. Carries calibrated picked-vs-rejected examples.
 - `nfebe-new-task`: prepare one or more repos to start any task (fix, feature, refactor, chore, docs, investigation): land on the freshly updated default branch and cut a properly named branch (same branch rules as `nfebe-commit`). The general form of `nfebe-new-feature`. No staging, commit, or push.
 - `nfebe-new-feature`: prepare one or more repos to start a new feature: land on the freshly updated default branch and cut a properly named feature branch (same branch rules as `nfebe-commit`). No staging, commit, or push.
 - `nfebe-git-clean`: clean merged feature branches and refresh the default branch in one or more related repos (safe-delete only, protects shared branches); optionally start a fresh feature branch.

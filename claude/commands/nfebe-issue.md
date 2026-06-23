@@ -29,4 +29,5 @@ This command writes the draft and shows it. It does not run `gh issue create` un
 
 - Before drafting, look at 1-2 recent issues in the target repo (`gh issue view <n> --json title,body`) and match their structure and voice.
 - If the input is rough notes, turn them into the structure above. If the input is an existing draft, edit it in place to these rules and report each change.
+- Before showing the draft, run `/nfebe-verify` over it: every factual claim (a version, a behavior, a file path, an error string, a root cause) must be backed by evidence gathered this session, not memory. Correct or cut anything unsupported; label anything unconfirmed as unverified.
 - Show the final title and body. If I then say to create it, run `gh issue create --title ... --body-file ...` against the named repo.

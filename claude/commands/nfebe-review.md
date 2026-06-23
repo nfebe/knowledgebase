@@ -12,6 +12,7 @@ This is a read-only review. No commits, pushes, or PR state changes (no merging,
 
 - Cite only files you actually opened and commands you actually ran in THIS session. No fabricated file paths, recalled APIs, or "it probably looks like" shapes.
 - When a finding depends on an external contract (a library error/type, an API response, an enum, a function signature), verify it from the real source (`node_modules`, the live API, its docs) and cite where. If you cannot verify, label the finding unverified rather than asserting it.
+- Before presenting the findings, run them through `/nfebe-verify`: it is the formal pass for this discipline. Every cited `file:line`, claimed behavior, and external shape gets confirmed against what was actually opened or run this session; tighten over-broad findings and drop or label any that cannot be backed.
 
 ## What to check
 
