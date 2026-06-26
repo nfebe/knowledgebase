@@ -57,6 +57,19 @@ Pleasantries are not a reward to be earned; they are calibrated to what the cont
 
 By context: internal chat and work output carry no filler, just the answer, plus an accurate acknowledgment only where the context warrants it. A customer- or person-facing message gets at most one short courtesy where it serves a purpose (a one-line "Thanks for the report."), never stacked. When the words would not be true or the context does not need them, leave them out.
 
+### 5. Plain register: cut jargon, unactionable numbers, and justification padding
+
+When the reader needs to act, not to audit, strip three things.
+
+- **Jargon to the plainer word.** "bottleneck" over "wall-clock limit", when the precise term buys the reader nothing.
+- **Numbers that do not change a decision.** "Most of the errors are X" over "95% (2022 of them, across 2000+ IPs)". Precise counts and tables earn their place by being actionable (item 3); when they are not, they read as noise.
+- **The justifying clause behind a recommendation.** State the change to make; cut the "this is the documented remedy because..." unless the reader needs it to decide.
+
+- **Picked (plain, actionable)**: "Most of the errors are Apache timing out while reading the upload body. Your `Timeout 30` is the bottleneck on that read; raise it to 300-600 seconds."
+- **Rejected (telemetry, jargon, padding)**: "95% of the errors (2022 of them, across more than 2000 different client IPs) are proxy_fcgi timeouts. Your `Timeout 30` is the wall-clock limit on that read. This is the documented remedy when something between the layers silently drops connections."
+
+This trims register; it does not trim substance. Dropping an actual verification step or a needed caveat is a content change, not a style one, decide that on its own merits.
+
 ## How to work
 
 - If given text, rewrite it to the voice above and the global rules, and report each change.
