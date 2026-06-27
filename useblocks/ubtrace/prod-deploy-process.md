@@ -1,17 +1,15 @@
 # ubTrace prod deploy process (current working mode)
 
-Authoritative as of 2026-06-22. This supersedes any "helm-only, prod has no terraform state" wording in older notes here (that was true before the 2026-06-15 state reconciliation, not now). Read this first when asked to deploy ubTrace to `team.useblocks.com`.
+Authoritative as of 2026-06-23. This supersedes any "helm-only, prod has no terraform state" wording in older notes here (that was true before the 2026-06-15 state reconciliation, not now). Read this first when asked to deploy ubTrace to `team.useblocks.com`.
 
-## The arrangement until the branches merge
+## The arrangement (both EKS PRs now merged)
 
-We deploy from two **unmerged feature branches**, on purpose, and keep doing so until both land:
+Both branches merged on 2026-06-23: ubtrace #1402 (chart + Terraform modules) into `develop`, ubinfra #156 (overlay + `deploy.sh` + runbooks) into `main`. The earlier "deploy from unmerged branches" mode is over.
 
-- **ubtrace** repo, branch `feat/844-eks-templates` (PR #1402): the Helm chart + Terraform modules. The chart here is the deploy source, **not** `develop`. `develop`'s chart lacks the keycloak-config-cli templates and reintroduces too-small startup-probe budgets, so deploying from it breaks.
-- **ubinfra** repo, branch `feat/844-migrate-ubtrace-deploy-config` (PR #156): the prod overlay `deploy/helm/ubtrace/values-team.yaml`, the `deploy.sh` wrapper, and the runbooks under `ubtrace/`.
+- **Chart source: the published OCI chart**, `oci://ghcr.io/useblocks/charts/ubtrace`, pinned by version. The chart with the keycloak-config-cli templates and the keycloak.userProfile/google fields exists only on develop-line tags (`1.6.0-dev.28` and later); the rc.0/rc.1 tags predate #1402. The dry-run and deploy were pinned to the OCI chart in ubinfra #185 (PR #186); before that, the dry-run rendered against a moving `develop` and was false-green. Run `helm registry login ghcr.io` before pulling; the ghcr `charts/ubtrace` package must grant the ubinfra repo read access for CI.
+- **Instance config: in ubinfra.** The prod overlay `deploy/helm/ubtrace/values-team.yaml`, the `deploy.sh` wrapper, the runbooks under `ubtrace/`, and the Terraform instance config (`production.tfvars` + `backend-production.hcl`) under `deploy/terraform/ubtrace-prod/`. The ubtrace repo ships only `*.example` instance files and excludes real ones from the published Terraform tarball.
 
-Keep both branches checked out and current with their remotes before a deploy. When #1402 and #156 merge, revisit this note: the chart/overlay move to their merged locations and the branch-checkout step goes away.
-
-The canonical step-by-step runbook lives in the ubinfra branch at `ubtrace/prod-helm-upgrade.md`; `deploy.sh` implements it. This note is the context around it, not a copy.
+The canonical step-by-step runbook lives in ubinfra at `ubtrace/prod-helm-upgrade.md`; `deploy.sh` implements it. This note is the context around it, not a copy.
 
 ## Terraform state exists (this is the part that confused us)
 
