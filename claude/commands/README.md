@@ -6,6 +6,7 @@ Canonical, version-controlled home for my Claude Code slash commands. Each `.md`
 
 - `nc-*`: Nextcloud work commands (operate on `nextcloud/server` etc.). Example: `/nc-finish-backports`.
 - `nfebe-*`: my personal, cross-project commands. Example: `/nfebe-pr`.
+- `ws-*`: WhileSmart PHP/Laravel package work. Example: `/ws-php-make-package`.
 
 ## Use on another machine
 
@@ -46,3 +47,7 @@ Edit a command here, commit, and the change is live everywhere the symlinks poin
 - `nfebe-git-clean`: clean merged feature branches and refresh the default branch in one or more related repos (safe-delete only, protects shared branches); optionally start a fresh feature branch.
 - `nfebe-update-knowledge`: record a note into the knowledge base, sync the live global Claude config (`CLAUDE.md` and command symlinks) into the repo, then commit and push to `main`.
 - `nfebe-design-google`: move a UI toward a Google-style design language (clean, colorful, creative, illustration- and vector-rich) while keeping the project's own brand. Brand-adaptive, works on any project.
+
+### WhileSmart (`ws-`)
+
+- `ws-php-make-package`: scaffold a new `whilesmart/eloquent-<noun>` Laravel package to the WhileSmart conventions: polymorphic owner via `eloquent-owner-access`, config-gated routes, any integration abstracted behind a contract plus a host binding (never a vendor hard-coded in the schema), Testbench tests, and the meta and workflow files. Verifies in a `laravel-dev` container until Pint and tests pass. No commit or publish.
